@@ -15,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $hello_world = 'HELLO WORLD!';
-    return view('homepage', ['hello_world'=>$hello_world]);
-});
+    return view('homepage', compact('hello_world'));
+})->name('home');
+Route::get('/second', function () {
+    $hello_second = 'HELLO WORLD 2!';
+    return view('second_page', compact('hello_second'));
+})->name('second');
